@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feedback Form</title>
+    <!--bootstrap links-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      font-weight: 400;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 3px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 2px 5px #ccc; 
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      vertical-align: middle;
+      }
+      input:hover, textarea:hover {
+      outline: none;
+      border: 1px solid #095484;
+      }
+      th, td {
+      width: 28%;
+      padding: 15px 0;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      vertical-align: unset;
+      line-height: 18px;
+      font-weight: 400;
+      word-break: break-all;
+      }
+      .first-col {
+      width: 16%;
+      text-align: left;
+      }
+      textarea:hover {
+      outline: none;
+      border: 1px solid #1c87c9;
+      }
+      table {
+      width: 100%;
+      }
+      textarea {
+      width: calc(100% - 6px);
+      }
+      .question {
+      padding: 15px 0 5px;
+      color: #095484;
+      }
+      .question-answer label {
+      display: block;
+      padding: 0 20px 10px 0;
+      }
+      .question-answer input {
+      width: auto;
+      }
+      .btn-block {
+      margin-top: 20px;
+      text-align: center;
+      }
+      #button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      -webkit-border-radius: 5px; 
+      -moz-border-radius: 5px; 
+      border-radius: 5px; 
+      background-color: #095484;
+      font-size: 16px;
+      color: #fff;
+     
+      }
+      #button:hover {
+      background-color: #0666a3;
+      }
+      .btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+      #game {
+  background-color:#3e4444;
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;}
+      @media (min-width: 568px) {
+      th, td {
+      word-break: keep-all;
+      }
+      }
+    </style>
+    <script>
+      // script for the button to provide with date
+function date(){
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; 
+var yyyy = today.getFullYear();
+
+if(dd<10) dd='0'+dd;
+if(mm<10) mm='0'+mm;
+document.getElementById("print").innerHTML=(dd+"/"+mm+"/"+yyyy);
+}
+// form validation including the one data validation
+ function msgprint(){
+            var x = document.getElementById("mytext").value;
+            var y=document.getElementById("mail").value;
+            const regex = /\d/;5
+const d = regex.test(x);
+      if( document.myForm.Name1.value == "" ||d==true) {
+         alert( "Please provide your correct name!" );
+         document.myForm.Name1.focus() ;
+         return false;
+      }
+      if( document.myForm.mail.value == "" ) {
+         alert( "Please provide your Email!" );
+         document.myForm.mail.focus() ;
+         return false;
+      }
+      if( document.myForm.pin.value == "" || isNaN( document.myForm.pin.value ) ||
+         document.myForm.pin.value.length != 6 ) {
+         
+         alert( "Please provide a correct pin." );
+         document.myForm.pin.focus() ;
+         return false;
+      }
+  return(alert("the form is submitted"));
+ 
+}  
+    </script>
+  </head>
+  <body bgcolor="purple">
+    <div class="testbox">
+      <form name="myForm">
+        <img src="feedback.png" align="right" style="height:20vw;width: 35vw;">
+        <h1>Feedback Form</h1>
+        <p class="question">Is this the first time you have visited the website?</p>
+        <div class="question-answer">
+          <label><input type="radio" value="none" name="visited" /> yes</label>
+          <label><input type="radio" value="none" name="visited" /> no</label>
+        </div>
+        <p class="question">What is the PRIMARY reason you came to the site?</p>
+        <textarea rows="5"></textarea>
+        <p class="question">Did you find what you needed?</p>
+        <div class="question-answer">
+          <label><input type="radio" value="none" name="needed" /> Yes, all of it</label>
+          <label><input type="radio" value="none" name="needed" /> Yes, some of it</label>
+          <label><input type="radio" value="none" name="needed" /> No, none of it</label>
+        </div>
+        <p class="question">If you did not find any or all of what you needed, please tell us what information you were looking for.</p>
+        <textarea rows="5"></textarea>
+        
+        <p class="question">What is the likelihood that you will visit the website again?</p>
+        <div class="question-answer">
+          <label><input type="radio" value="none" name="likelihood" /> Extremely likely</label>
+          <label><input type="radio" value="none" name="likelihood" /> Very likely</label>
+          <label><input type="radio" value="none" name="likelihood" /> Moderately likely</label>
+          <label><input type="radio" value="none" name="likelihood" /> Slightly likely</label>
+          <label><input type="radio" value="none" name="likelihood" /> Should find another career option</label>
+        </div>
+        <p class="question">Please add any comments you have for improving the website. </p>
+        <textarea rows="5"></textarea>
+        <!--part ot add name and emails-->
+        <label for="Name1"> full Name *:</label><br>
+        <input type="text" name="Name1" id="mytext"required>
+      
+        <br><br>
+        <label for="mail">Email address:*</label><br>
+        <input type="email" name="mail" id="mail" required>
+        <br><br>
+
+
+        <label for="Add2"> date:*</label>
+    <br>
+    <!-- styling and html of button-->
+        <input type="button" id="date1" onclick="date()" value="press to get date" style="border: none;
+        background-color:#0666a3;
+        padding: 1vw 0.9vw;
+        font-size: 1.2vw;
+        cursor: pointer;
+        text-align: left;
+        color: rgb(255, 255, 255);
+        width: 10vw;">
+    
+        <p id="print"></p>
+  <br>
+  <label for="pin"> pin *:</label><br>
+  <input type="text" name="pin" pattern="[0-9]{6}" maxlength="6">
+        <div class="btn-block">
+          <input type="submit" id="button" onclick = "msgprint() " value="submit">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

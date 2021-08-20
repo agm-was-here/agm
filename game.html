@@ -1,0 +1,142 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>game</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--bootsrap for designing-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+      function math(){
+          // the game code
+        var A=Math.floor(Math.random()*1000)+1;
+        var B=Math.floor(Math.random()*1000)+1;
+        document.write("<br><br>");
+        "&nbsp;"
+        document.write("M="+A);
+        document.write("<br>");
+        "&nbsp;"
+        document.write("N="+B);
+        D=Math.floor((A*B)/2);}
+        function msgprint(D){
+            var ans = prompt("enter your answer");
+            if (ans==D){
+                Window.alert(" your answer is correct");
+            }
+            if (ans!=D){
+                window. alert("answer is wrong ,try again");
+            }
+        }
+
+// the timer 
+        $(document).ready(function () {
+    "use strict";
+    var counterDown = setInterval(function () {
+        var span = $("span").html();
+        var counter = parseInt(span);
+        if (counter !== 0) {
+            $("span").html(counter - 1);
+            if (counter === 10) {
+                $(".count-down").css({
+                    backgroundColor: "orange"
+                });
+            } else if (counter === 5) {
+                $(".count-down").css({
+                    backgroundColor: "red"
+                });
+            }
+            // the alert tag
+        } else {
+            clearInterval(counterDown);
+            alert("Time out \n press ok to try again");
+            location.reload();
+        }
+    }, 500);
+});
+
+    </script>
+    <!--css for the page inclusing bg image and others-->
+    <style> .btn-block {
+        margin-top: 20px;
+        text-align: center;
+        }
+        #button {
+        width: 120px;
+        padding: 5px;
+        border: none;
+        -webkit-border-radius: 5px; 
+        -moz-border-radius: 5px; 
+        border-radius: 5px; 
+        background-color: #11c028;
+        font-size: 15px;
+        color: #fff;
+       
+        }
+        body{
+            background-image:url("BACK.jpeg");
+            background-size:auto;
+            position: center;
+        }
+        .java{
+            padding: 1px;
+            font-size: 1.7vw;
+        }
+        .key{
+            padding: 10px;
+            font-size: 1.7vw;
+        }
+        center {
+    margin: auto;
+}
+
+.count-down {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: darkcyan;
+    text-align: center;
+    transition: .5s all ease-in-out
+}
+
+.count-down span {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 50px auto;
+    font-family: sans-serif;
+    line-height: 100px;
+    color: azure;
+    font-size: 50px;
+    font-weight: bold
+}
+
+
+       </style>
+    <body>
+        <div class="container-fluid">
+        <div class="java">
+        <p>You are given a rectangular board of M × N squares. Also you are given an unlimited number of standard domino pieces of 2 × 1 squares.<br> You are allowed to rotate the pieces. You are asked to place as many dominoes as possible on the board so as to meet the following condition<br>1. Each domino completely covers two squares.<br>2. No two dominoes overlap.<br>3. Each domino lies entirely inside the board. It is allowed to touch the edges of the board.<br>Find the maximum number of dominoes, which can be placed under these restrictions.</p>
+        </div>
+        <div class= "key">
+        <mark>
+        <script>math();</script><br>
+        </mark></div>
+        <!--bootstraps-->
+        <p><kbd>press submit to input your answer </kbd> </p> 
+        <div class=".btn-block">
+        <input type="button" id="button" onclick = "msgprint()" value="submit">
+        </div>
+        <center>
+            <!--determining the time -->
+            <div class="count-down">
+              <span>25</span>
+            </div>
+          </center>
+        </div>
+    </body>

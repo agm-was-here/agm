@@ -1,0 +1,201 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>personel website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--external css and bootstrap-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<link rel="stylesheet" href="attribute.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--css of the buttons-->
+<style>
+	 .btn-block {
+      margin-top: 20px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      -webkit-border-radius: 5px; 
+      -moz-border-radius: 5px; 
+      border-radius: 5px; 
+      background-color: #095484;
+      font-size: 16px;
+      color: #fff;
+     
+      }
+      button:hover {
+      background-color: #0666a3;
+      }
+      #game {
+  background-color:#3e4444;
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+@media only screen and (min-width: 1000px) {
+  .pic1{
+    border: 1px solid white;
+	float:right;
+	width:250px;
+	height:250px;
+  border-radius:50%;
+  }
+}
+#clock {
+      background-color: #292F33;
+      font-size: 28px;
+      font-family: Orbitron;
+      text-align: center;
+      color: #55ACEE;
+      letter-spacing: 7px;
+    
+    }
+
+
+
+    
+</style>
+<!--script to the clock-->
+<script>
+  setInterval(showTime, 1000);
+  function showTime() {
+    let time = new Date();
+    let hour = time.getHours();//current hour
+    let min = time.getMinutes();//current minute
+    let sec = time.getSeconds();//current second
+    am_pm = "AM";
+// turning a 24 hour clock to 12 hour
+    if (hour > 12) {
+      hour = hour- 12;
+      am_pm = "PM";
+    }
+    if(hour==12){
+      am_pm="PM";
+    }
+    if (hour == 0) {
+      hr = 12;
+      am_pm = "AM";
+    }
+
+    hour = hour < 10 ? "0" + hour : hour;
+    min = min < 10 ? "0" + min : min;
+    sec = sec < 10 ? "0" + sec : sec;
+
+    let currentTime = hour + ":"
+      + min + ":" + sec + " " + am_pm;
+
+    document.getElementById("clock")
+      .innerHTML = currentTime;
+  }
+  showTime();
+</script>
+</head>
+<body><!--clock-->
+  <div id="clock">9:10:34</div>
+<div class= "total">
+	<div class="topnav" style="text-align:right;">
+        <a href="#about">Skills</a>
+        <a href="#1">Education</a>
+        <a href="#2">Achievements</a>
+        <a href="#3">Contact</a>
+        <a href="#4">Professional Experience</a>
+      </div>
+<img src="profilepic1.jpg" class="pic1" alt="check again">
+<p class="p1">ASWIN G MENON</p>
+<br>
+<DL><div class="soft">
+   <DT style="font-size:2vw"><u> ABOUT ME</u>
+   <br>
+   <DD style="text-align: left;font-size:1.7vw;">software engineeer with 3+ year experience in Data collection,web page development,web designing,software development.Seeking to leverage my  developing skills,leadership skills</DD>
+   </DD></dd></DT></div>
+</DL>
+<br>
+<div class="skills">
+<p style="font-size:2vw" id="about"><u>SKILLS</u></p>
+<div class="list">
+<OL type="i" style="font-size: 1.3vw;">
+	<LI>python</LI>
+	<LI>C</LI>
+    <LI>php</LI>
+    <LI>adobeXD,HTML,CSS</LI></div></div>
+<br>
+<br>
+<br>    
+<div class="ed" style="vertical-align: top;">
+<h3 id="1" style="font-size: 2vw"><u>EDUCATION</u></h3>
+<table>
+	<tr>
+	<th>certificate</th>
+	<th>year</th>
+	<th>institution</th></tr>
+	<tr>
+	<td>M-TECH</td>
+	<td>2028</td>
+	<td>NIT-in Data collection and sorting<a href="certificate1.jpg" target="iframe1"><kbd>[certificate]</kbd></a></td></tr>
+	<tr>
+	<td>B-TECH</td>
+	<td>2024</td>
+	<td>AMRITA UNIVERSITY<a href="certificate2.jpg" target="iframe1"><kbd>[certificate]</kbd></a></td></tr>
+</table>
+<p id="xtra"> <u>*go to the bottom to view the certificate</u></p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="ach">
+<h3 id="2" style="font-size:1.5vw;"><u>ACHIEVEMENT</u></u></h3>
+<ul style="font-size:1.5vw;">
+<li>Developed website:<a href>site domain</a>as freelance</li>
+<li>github:<a href="https://github.com/agm-was-here">@agm-was-here</a></li>
+<li>hackerrank:<a href="https://www.hackerrank.com/U4CSE20313">agm</a></li>
+<li>codeforce:<a href="https://codeforces.com/profile/agm_was_here">ASWIN</a></li>
+</ul>
+</div>
+<br>
+<div class="cont">
+<h3 id="3" style="font-size:1.6vw;"><u>CONTACT</u></h3>
+<ul style="font-size:1.3vw;">
+<li>phone:(132)423-453</li>
+<li>Email:<a href="mailto:aswinmenon92@gmail.com">aswinmenon92@gmail.com</a></li>
+<li>address:23rd street<br>washington<br>usa</li>
+<li>linkedin.com-aswin</li>
+</ul>
+</div>
+<br>
+<div class="prof">
+<h3 id="4" style="font-size:2vw;"><u>Professional Experience</u></h3>
+<DL style="font-size: 1.3vw;">
+ <DT>2028-2031:
+ <DD>worked as a software developer for infosys.worked on debugging section.</DD></DT>
+ <DT>2031-present:
+ <DD>worked in cybernetics in apex</DD></DT></DL>
+ </div>
+ <div class="iframe"><!--frame -->
+ <iframe src="download1.jpg"  name="iframe1" height="225px" width="225px" title="click the certificate button"></iframe>
+</div>
+ <br>
+ <div class="btn-block"> <!--button to form-->
+<button onclick="window.location.href='form extra.html'">feedback form</button>
+</div>
+<div class="btn-block"><!--button to game-->
+<button id="game" onclick="window.location.href='game.html'">wanna play a game</button>
+<br>
+</div>
+
+</div>  
+</body>
+
+</html>
